@@ -1,0 +1,10 @@
+dbs:
+  - path: /app/db.sqlite
+    replicas:
+      - type: gcs
+        bucket: sample-litestream-bucket-00000
+        path: db.sqlite
+        retention: 12h
+        retention-check-interval: 3m
+        snapshot-interval: 4h
+        sync-interval: 30s
